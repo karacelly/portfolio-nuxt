@@ -7,7 +7,7 @@
     >
       <img src="../assets/images/photo.png" class="rounded-full" alt="" />
     </div>
-    <div class="flex flex-col justify-center text-center py-2">
+    <div class="flex flex-col justify-center text-center py-3">
       <h1 class="text-3xl">Kesya Wijaya</h1>
       <div class="status flex justify-center">
         <h2
@@ -18,14 +18,14 @@
       </div>
     </div>
     <div
-      class="flex flex-col py-4 border-y border-zinc-200 dark:border-zinc-600 mt-4"
+      class="flex flex-col pt-6 pb-5 border-y border-zinc-200 dark:border-zinc-600 mt-4"
     >
       <div class="contacts flex justify-between items-center">
         <div
           class="icon bg-[#f4f4f4] dark:bg-[#222222] drop-shadow-md px-3 py-2 shadow-white rounded-md"
         >
           <font-awesome-icon
-            class="text-secondary-color"
+            class="text-primary-color"
             icon="fa-regular fa-envelope"
           />
         </div>
@@ -36,12 +36,12 @@
           >
         </div>
       </div>
-      <div class="contacts py-1.5 flex justify-between items-center">
+      <div class="contacts py-3 flex justify-between items-center">
         <div
           class="icon bg-[#f4f4f4] dark:bg-[#222222] drop-shadow-md px-3 py-2 shadow-black rounded-md"
         >
           <font-awesome-icon
-            class="text-secondary-color"
+            class="text-primary-color"
             icon="fa-brands fa-github"
           />
         </div>
@@ -50,12 +50,12 @@
           <p class="truncate">karacelly</p>
         </div>
       </div>
-      <div class="contacts py-1.5 flex justify-between items-center">
+      <div class="contacts flex justify-between items-center">
         <div
           class="icon bg-[#f4f4f4] dark:bg-[#222222] drop-shadow-md px-3 py-2 shadow-black rounded-md"
         >
           <font-awesome-icon
-            class="text-secondary-color"
+            class="text-primary-color"
             icon="fa-regular fa-map"
           />
         </div>
@@ -66,13 +66,13 @@
       </div>
     </div>
     <div class="w-full flex mt-6 mb-2 px-5 justify-around items-center">
-      <a href=""
-        ><font-awesome-icon class="text-xl" icon="fa-brands fa-linkedin"
+      <a href="https://github.com/karacelly"
+        ><font-awesome-icon class="text-xl" icon="fa-brands fa-github"
       /></a>
-      <a href=""
+      <a href="https://www.instagram.com/kesyaawijaya/"
         ><font-awesome-icon class="text-xl" icon="fa-brands fa-instagram"
       /></a>
-      <a href=""
+      <a href="https://www.linkedin.com/in/kesyawijaya/"
         ><font-awesome-icon class="text-xl" icon="fa-brands fa-linkedin"
       /></a>
     </div>

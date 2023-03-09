@@ -1,6 +1,10 @@
 import { library, config } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import {
+  faGraduationCap,
+  faBriefcase,
+} from "@fortawesome/free-solid-svg-icons";
+import {
   faSun,
   faMoon,
   faEnvelope,
@@ -19,6 +23,8 @@ library.add(
   faMoon,
   faEnvelope,
   faMap,
+  faGraduationCap,
+  faBriefcase,
   faGithub,
   faLinkedin,
   faInstagram
