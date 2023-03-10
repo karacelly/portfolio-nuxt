@@ -8,6 +8,11 @@ module.exports = {
     "./nuxt.config.{js,ts}",
     "./app.vue",
   ],
+  variants: {
+    extend: {
+      outline: ["hover", "focus"],
+    },
+  },
   darkMode: "class",
   theme: {
     extend: {

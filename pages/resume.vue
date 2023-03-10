@@ -5,13 +5,13 @@
   <div class="my-6">
     <button
       @click="downloadPDF()"
-      class="py-2 px-4 bg-gradient-to-r from-secondary-color to-primary-color rounded-md text-white font-semibold hover:text-black hover:font-bold"
+      class="py-2 px-4 border-2 border-primary-color hover:bg-gradient-to-r from-secondary-color to-primary-color rounded-md font-semibold text-black dark:text-white hover:outline-none hover:border-transparent"
     >
       Download My Resume >>
     </button>
   </div>
 
-  <div class="title flex mt-4 gap-3 items-center">
+  <div class="title flex mt-6 gap-3 items-center">
     <div
       class="icon p-2 rounded-md bg-[#f4f4f4] dark:bg-[#222222] drop-shadow-md"
     >
@@ -83,6 +83,45 @@
       </template>
     </Timeline>
   </div>
+
+  <div class="title flex gap-3 items-center">
+    <div
+      class="icon p-2 rounded-md bg-[#f4f4f4] dark:bg-[#222222] drop-shadow-md"
+    >
+      <font-awesome-icon
+        class="text-xl text-primary-color"
+        icon="fa-regular fa-file-lines"
+      />
+    </div>
+    <div class="section-title text-xl font-bold">Volunteer & Organization</div>
+  </div>
+  <div class="px-2">
+    <Timeline :value="volunteer" class="py-6">
+      <template #content="slotProps">
+        <div class="pb-5 flex justify-between gap-x-3">
+          <div class="left w-[80%]">
+            <h2 class="text-lg font-bold">
+              {{ slotProps.item.position }}
+            </h2>
+            <h2 class="text-primary-color text-md">
+              {{ slotProps.item.company }}
+            </h2>
+            <p class="text-md">
+              {{ slotProps.item.desc }}
+            </p>
+          </div>
+          <div class="right text-right">
+            <p class="text-sm">
+              {{ slotProps.item.date }}
+            </p>
+            <p class="text-sm italic">
+              {{ slotProps.item.category }}
+            </p>
+          </div>
+        </div>
+      </template>
+    </Timeline>
+  </div>
 </template>
 
 <script>
@@ -111,6 +150,12 @@ export default {
           category: "Internship",
         },
         {
+          position: "Tokopedia Devcamp Class of 2022",
+          company: "Tokopedia",
+          date: "Oct 2022",
+          desc: "Selected as one of participants to join 7-day exclusive bootcamp training to learn how to use technology especially in Backend curriculum, such as Golang, Database, Caching, and Message Queueing. Experience and get a closer look at the Tokopedia Tech team, be mentored directly by Tokopedia’s tech and product leaders in building impactful products through the virtual hackathons, and extend network to fellow tech enthusiasts.",
+        },
+        {
           position: "Operations and System Development Staff",
           company: "Binus University",
           date: "Aug 2022 - Present",
@@ -125,17 +170,55 @@ export default {
           category: "Full-time",
         },
         {
+          position: "Scholarship Mentor",
+          company: "Binus Student Learning Community",
+          date: "Oct 2021 - Jan 2023",
+          desc: "Received 16 credits scholarship every semester for three semester in a row. Guide students whose achievements have not reached the standard in Program Design Methods (COMP6056) and Human & Computer Interaction (COMP6800001).",
+        },
+        {
           position: "Laboratory Assistant",
           company: "Binus University",
           date: "Feb 2021 - Aug 2021",
           desc: "Tutor and marker for Multimedia Programming Foundation (COMP7094), Database (ISYS6084).",
           category: "Part-time",
         },
+      ],
+      volunteer: [
         {
-          position: "Scholarship Mentor",
-          company: "Binus Student Learning Community",
-          date: "Oct 2021 - Jan 2023",
-          desc: "Received 16 credits scholarship every semester for three semester in a row. Guide students whose achievements have not reached the standard in Program Design Methods (COMP6056) and Human & Computer Interaction (COMP6800001).",
+          position: "Registration Officer",
+          company: "ICPC - International Collegiate Programming Contest",
+          date: "Oct 2021 - Nov 2021",
+          desc: "We manage all of the registration process of ICPC Asia Jakarta Regional 2021.",
+        },
+        {
+          position: "Support Staff",
+          company: "Computerun",
+          date: "Aug 2021 - Feb 2022",
+          desc: "Choosing and manage the consumption vendors and menu for the event. Recommends merchandise vendors for the event. Collaborate with other division to ace the event.",
+        },
+        {
+          position: "Freshmen Partner",
+          company: "Binus University",
+          date: "Jul 2021 - Aug 2022",
+          desc: "Supervise and help a group of freshmen to pass their first year of university.",
+        },
+        {
+          position: "Activist",
+          company: "HIMTI Binus University",
+          date: "Mar 2021 - Feb 2022",
+          desc: "Belongs to the Commission 2 – Relation Expansion, HIMTI Care Division. Hold an internal event every month to strengthen HIMTI members relationship. Responsible for internal study tour and social services.",
+        },
+        {
+          position: "Coordinator of PBC Alam Sutra",
+          company: "HIMTI BINUS University",
+          date: "Mar 2021 - Sep 2021",
+          desc: "Responsible for 3 divisions; Master of Ceremony (MC), Lectures, and Support. Decide and make sure of the schedule, delivery method, and place of the event are enough to provide all of School of Computer Science students. Prepare the material used for the C Programming lectures. Invite of total 17 laboratory assistants to teach the participants.",
+        },
+        {
+          position: "Proctor",
+          company: "ICPC - International Collegiate Programming Contest",
+          date: "Nov 2020 - Dec 2020",
+          desc: "Proctor is the comittee that helps to monitor each ICPC Asia Jakarta Regional 2020 team during the competition.",
         },
       ],
     };

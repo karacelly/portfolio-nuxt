@@ -9,6 +9,7 @@ import {
   faMoon,
   faEnvelope,
   faMap,
+  faFileLines,
 } from "@fortawesome/free-regular-svg-icons";
 import {
   faGithub,
@@ -23,6 +24,7 @@ library.add(
   faMoon,
   faEnvelope,
   faMap,
+  faFileLines,
   faGraduationCap,
   faBriefcase,
   faGithub,

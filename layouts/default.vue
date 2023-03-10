@@ -10,9 +10,9 @@ useHead({
   <main
     class="flex justify-around w-full px-[5vw] py-[5vh] text-black dark:text-white gap-x-5"
   >
-    <ProfileItem class="w-1/3 min-h-[70vh] max-h-[90vh]"></ProfileItem>
+    <ProfileItem class="w-1/3 h-[85vh]"></ProfileItem>
     <div
-      class="w-full min-h-[70vh] max-h-[90vh] max-w-[70vw] bg-backdrop-color dark:bg-dark-backdrop-color rounded-xl text-black dark:text-white drop-shadow-lg overflow-scroll"
+      class="w-full h-[85vh] max-w-[70vw] bg-backdrop-color dark:bg-dark-backdrop-color rounded-xl text-black dark:text-white drop-shadow-lg overflow-scroll"
     >
       <NavbarItem class="sticky top-0 z-10"></NavbarItem>
       <div class="px-10 pb-5">
