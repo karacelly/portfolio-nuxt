@@ -29,6 +29,12 @@ const themeColor = computed(() => {
         to="/portfolio"
         >Portfolio</NuxtLink
       >
+      <NuxtLink
+        active-class="nuxt-link-active"
+        class="hover:font-bold"
+        to="/blog"
+        >Blog</NuxtLink
+      >
       <button
         @click="toggleDark"
         class="px-2 py-1 rounded-md hover:bg-black hover:text-white hover:dark:bg-white hover:dark:text-black"
