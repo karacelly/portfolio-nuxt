@@ -134,7 +134,7 @@
       class="bg-close-color dark:bg-dark-close-color dark:text-white"
     >
       <template #content>
-        <div class="grid grid-cols-5 gap-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
           <div v-for="(image, index) in images" :key="index">
             <img
               class="w-full h-auto cursor-pointer"

@@ -12,7 +12,7 @@ const themeColor = computed(() => {
 <template>
   <nav class="w-full flex justify-end">
     <div
-      class="w-2/3 flex justify-around bg-inner-color dark:bg-dark-inner-color rounded-bl-lg rounded-tr-lg text-base font-light py-4"
+      class="w-full md:w-2/3 lg:w-2/3 flex justify-around bg-inner-color dark:bg-dark-inner-color rounded-t-lg md:rounded-bl-lg md:rounded-tr-lg lg:rounded-bl-lg lg:rounded-tr-lg text-base font-light py-4"
     >
       <NuxtLink active-class="nuxt-link-active" class="hover:font-bold" to="/"
         >About</NuxtLink
