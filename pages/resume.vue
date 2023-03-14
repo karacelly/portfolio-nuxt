@@ -1,5 +1,5 @@
 <template>
-  <h1 class="text-3xl font-bold pb-2">Resume</h1>
+  <h1 class="text-2xl md:text-3xl lg:text-3xl  font-bold pb-2">Resume</h1>
   <div class="w-8 border-b-2 border-secondary-color" />
 
   <div class="my-6">
@@ -142,7 +142,7 @@
               @click="openModal(index)"
             />
             <button
-              class="bg-primary-color hover:bg-secondary-color text-white font-bold py-2 px-4 rounded-full mt-2"
+              class="hidden md:block lg:block bg-primary-color hover:bg-secondary-color text-white font-bold py-2 px-4 rounded-full mt-2"
               @click="openModal(index)"
             >
               View

@@ -1,5 +1,5 @@
 <template>
-  <h1 class="text-3xl font-bold pb-2">About Me</h1>
+  <h1 class="text-2xl md:text-3xl lg:text-3xl font-bold pb-2">About Me</h1>
   <div class="w-8 border-b-2 border-secondary-color" />
 
   <div class="content">
