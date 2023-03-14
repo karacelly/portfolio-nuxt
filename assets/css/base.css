@@ -1,12 +1,16 @@
 /* color palette from <https://github.com/vuejs/theme> */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800&display=swap");
+
 :root {
   --vt-c-white: #ffffff;
   --vt-c-white-soft: #f8f8f8;
   --vt-c-white-mute: #f2f2f2;
+  --vt-c-white-close: #f4f4f4;
 
   --vt-c-black: #111111;
   --vt-c-black-soft: #1e1e1f;
   --vt-c-black-mute: #333333;
+  --vt-c-black-close: #222222;
 
   --vt-c-red: #ff7373;
   --vt-c-pink: #ff9898;
@@ -66,7 +70,7 @@ body {
   background: var(--color-background);
   transition: color 0.5s, background-color 0.5s;
   line-height: 1.6;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: 15px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

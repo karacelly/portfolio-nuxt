@@ -13,7 +13,7 @@
 
   <div class="title flex mt-6 gap-3 items-center">
     <div
-      class="icon p-2 rounded-md bg-[#f4f4f4] dark:bg-[#222222] drop-shadow-md"
+      class="icon p-2 rounded-md bg-close-color dark:bg-dark-close-color drop-shadow-md"
     >
       <font-awesome-icon
         class="text-xl text-primary-color"
@@ -24,6 +24,11 @@
   </div>
   <div class="px-2">
     <Timeline :value="education" class="py-6">
+      <template #opposite="slotProps">
+        <p class="text-sm">
+          {{ slotProps.item.date }}
+        </p>
+      </template>
       <template #content="slotProps">
         <div class="pb-5 flex justify-between">
           <div class="left">
@@ -37,9 +42,6 @@
               {{ slotProps.item.desc }}
             </p>
           </div>
-          <p class="text-sm">
-            {{ slotProps.item.date }}
-          </p>
         </div>
       </template>
     </Timeline>
@@ -47,7 +49,7 @@
 
   <div class="title flex gap-3 items-center">
     <div
-      class="icon p-2 rounded-md bg-[#f4f4f4] dark:bg-[#222222] drop-shadow-md"
+      class="icon p-2 rounded-md bg-close-color dark:bg-dark-close-color drop-shadow-md"
     >
       <font-awesome-icon
         class="text-xl text-primary-color"
@@ -58,6 +60,16 @@
   </div>
   <div class="px-2">
     <Timeline :value="experience" class="py-6">
+      <template #opposite="slotProps">
+        <p class="text-sm">
+          <p class="text-sm">
+              {{ slotProps.item.date }}
+            </p>
+            <p class="text-sm italic">
+              {{ slotProps.item.category }}
+            </p>
+        </p>
+      </template>
       <template #content="slotProps">
         <div class="pb-5 flex justify-between gap-x-3">
           <div class="left w-[80%]">
@@ -71,14 +83,6 @@
               {{ slotProps.item.desc }}
             </p>
           </div>
-          <div class="right text-right">
-            <p class="text-sm">
-              {{ slotProps.item.date }}
-            </p>
-            <p class="text-sm italic">
-              {{ slotProps.item.category }}
-            </p>
-          </div>
         </div>
       </template>
     </Timeline>
@@ -86,7 +90,7 @@
 
   <div class="title flex gap-3 items-center">
     <div
-      class="icon p-2 rounded-md bg-[#f4f4f4] dark:bg-[#222222] drop-shadow-md"
+      class="icon py-2 px-3 rounded-md bg-close-color dark:bg-dark-close-color drop-shadow-md"
     >
       <font-awesome-icon
         class="text-xl text-primary-color"
@@ -97,6 +101,14 @@
   </div>
   <div class="px-2">
     <Timeline :value="volunteer" class="py-6">
+      <template #opposite="slotProps">
+          <p class="text-sm">
+            {{ slotProps.item.date }}
+          </p>
+          <p class="text-sm italic">
+            {{ slotProps.item.category }}
+          </p>
+      </template>
       <template #content="slotProps">
         <div class="pb-5 flex justify-between gap-x-3">
           <div class="left w-[80%]">
@@ -110,17 +122,51 @@
               {{ slotProps.item.desc }}
             </p>
           </div>
-          <div class="right text-right">
-            <p class="text-sm">
-              {{ slotProps.item.date }}
-            </p>
-            <p class="text-sm italic">
-              {{ slotProps.item.category }}
-            </p>
-          </div>
         </div>
       </template>
     </Timeline>
+  </div>
+
+  <div class="section-title text-xl font-bold">Certificates & Achievements</div>
+  <div class="mt-4 mb-6">
+    <Card
+      v-if="!showModal"
+      class="bg-close-color dark:bg-dark-close-color dark:text-white"
+    >
+      <template #content>
+        <div class="grid grid-cols-5 gap-4">
+          <div v-for="(image, index) in images" :key="index">
+            <img
+              class="w-full h-auto cursor-pointer"
+              :src="image"
+              @click="openModal(index)"
+            />
+            <button
+              class="bg-primary-color hover:bg-secondary-color text-white font-bold py-2 px-4 rounded-full mt-2"
+              @click="openModal(index)"
+            >
+              View
+            </button>
+          </div>
+        </div>
+      </template>
+    </Card>
+    <div
+      class="w-full h-full flex justify-center items-center bg-gray-800 bg-opacity-50"
+      v-if="showModal"
+    >
+      <Card class="bg-close-color dark:bg-dark-close-color dark:text-white">
+        <template #content>
+          <img :src="images[currentIndex]" class="w-full h-auto" />
+          <button
+            class="bg-primary-color hover:bg-secondary-color text-white font-bold py-2 px-4 rounded-full mt-2"
+            @click="closeModal"
+          >
+            Close
+          </button>
+        </template>
+      </Card>
+    </div>
   </div>
 </template>
 
@@ -221,6 +267,13 @@ export default {
           desc: "Proctor is the comittee that helps to monitor each ICPC Asia Jakarta Regional 2020 team during the competition.",
         },
       ],
+      images: [
+        "/certificates/Devcamp.jpg",
+        "certificates/MentorEven2122.jpg",
+        "certificates/MentorOdd2122.jpg",
+      ],
+      showModal: false,
+      currentIndex: 0,
     };
   },
   methods: {
@@ -233,13 +286,21 @@ export default {
       link.click();
       document.body.removeChild(link);
     },
+    openModal(index) {
+      this.showModal = true;
+      this.currentIndex = index;
+      console.log(this.showModal);
+    },
+    closeModal() {
+      this.showModal = false;
+    },
   },
 };
 </script>
 
 <style>
-.p-timeline-event-opposite {
-  display: none;
+.p-timeline .p-timeline-event-opposite {
+  width: 100px;
 }
 
 .p-timeline .p-timeline-event-marker {

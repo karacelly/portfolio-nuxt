@@ -8,10 +8,10 @@
       <img src="../assets/images/photo.png" class="rounded-full" alt="" />
     </div>
     <div class="flex flex-col justify-center text-center py-3">
-      <h1 class="text-3xl">Kesya Wijaya</h1>
+      <h1 class="text-3xl font-bold">Kesya Wijaya</h1>
       <div class="status flex justify-center">
         <h2
-          class="bg-[#f6f6f6] dark:bg-dark-inner-color inline px-3 py-1 rounded-lg mt-2 mb-1 drop-shadow-sm"
+          class="bg-[#f6f6f6] dark:bg-dark-inner-color inline px-3 py-1 rounded-lg mt-2 mb-1 drop-shadow-sm font-semibold"
         >
           Software Engineer
         </h2>
