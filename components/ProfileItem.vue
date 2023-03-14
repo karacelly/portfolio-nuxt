@@ -39,10 +39,10 @@
     </button>
     <div class="px-7 py-4 md:py-10 lg:py-10">
       <div
-        class="flex flex-row md:flex-col lg-flex-col gap-x-5 md:gap-0 lg:gap-0"
+        class="flex flex-row md:justify-center md:items-center md:flex-col gap-x-5 md:gap-0"
       >
         <div
-          class="w-1/3 md:w-full lg:w-full img py-3 md:py-5 lg:py-5 px-3 md:m-2 lg:m-2 drop-shadow-xl bg-inner-color dark:bg-dark-inner-color rounded-3xl flex justify-center items-center"
+          class="w-1/3 md:w-2/3 lg:w-2/3 img py-3 md:py-5 lg:py-5 px-3 md:m-2 lg:m-2 drop-shadow-xl bg-inner-color dark:bg-dark-inner-color rounded-3xl flex justify-center items-center"
         >
           <img src="../assets/images/photo.png" class="rounded-full" alt="" />
         </div>
