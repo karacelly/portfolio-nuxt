@@ -8,10 +8,10 @@ export default defineNuxtConfig({
     "primeicons/primeicons.css",
   ],
   modules: ["@nuxtjs/tailwindcss", "@nuxtjs/color-mode"],
-  colorMode: {
-    classSuffix: "",
-  },
   build: {
     transpile: ["primevue"],
+  },
+  colorMode: {
+    classSuffix: "",
   },
 });

@@ -20,25 +20,25 @@
         icon="fa-solid fa-graduation-cap"
       />
     </div>
-    <div class="section-title text-xl font-bold">Education</div>
+    <div class="section-title text-lg font-bold">Education</div>
   </div>
   <div class="px-2">
     <Timeline :value="education" class="py-6">
       <template #opposite="slotProps">
-        <p class="text-sm">
+        <p class="text-xs">
           {{ slotProps.item.date }}
         </p>
       </template>
       <template #content="slotProps">
         <div class="pb-5 flex justify-between">
           <div class="left">
-            <h2 class="text-lg font-bold">
+            <h2 class="text-md font-bold">
               {{ slotProps.item.instance }}
             </h2>
-            <h2 class="text-md text-primary-color">
+            <h2 class="text-sm text-primary-color">
               {{ slotProps.item.title }}
             </h2>
-            <p class="text-md">
+            <p class="text-sm">
               {{ slotProps.item.desc }}
             </p>
           </div>
@@ -56,16 +56,16 @@
         icon="fa-solid fa-briefcase"
       />
     </div>
-    <div class="section-title text-xl font-bold">Experience</div>
+    <div class="section-title text-lg font-bold">Experience</div>
   </div>
   <div class="px-2">
     <Timeline :value="experience" class="py-6">
       <template #opposite="slotProps">
-        <p class="text-sm">
-          <p class="text-sm">
+        <p class="text-xs">
+          <p class="text-xs">
               {{ slotProps.item.date }}
             </p>
-            <p class="text-sm italic">
+            <p class="text-xs italic">
               {{ slotProps.item.category }}
             </p>
         </p>
@@ -73,13 +73,13 @@
       <template #content="slotProps">
         <div class="pb-5 flex justify-between gap-x-3">
           <div class="left w-[80%]">
-            <h2 class="text-lg font-bold">
+            <h2 class="text-md font-bold">
               {{ slotProps.item.position }}
             </h2>
-            <h2 class="text-primary-color text-md">
+            <h2 class="text-primary-color text-sm">
               {{ slotProps.item.company }}
             </h2>
-            <p class="text-md">
+            <p class="text-sm">
               {{ slotProps.item.desc }}
             </p>
           </div>
@@ -88,7 +88,7 @@
     </Timeline>
   </div>
 
-  <div class="title flex gap-3 items-center">
+  <!-- <div class="title flex gap-3 items-center">
     <div
       class="icon py-2 px-3 rounded-md bg-close-color dark:bg-dark-close-color drop-shadow-md"
     >
@@ -97,7 +97,7 @@
         icon="fa-regular fa-file-lines"
       />
     </div>
-    <div class="section-title text-xl font-bold">Volunteer & Organization</div>
+    <div class="section-title text-lg font-bold">Volunteer & Organization</div>
   </div>
   <div class="px-2">
     <Timeline :value="volunteer" class="py-6">
@@ -125,17 +125,17 @@
         </div>
       </template>
     </Timeline>
-  </div>
+  </div> -->
 
-  <div class="section-title text-xl font-bold">Certificates & Achievements</div>
+  <div class="section-title text-lg font-bold">Certificates & Achievements</div>
   <div class="mt-4 mb-6">
     <Card
       v-if="!showModal"
-      class="bg-close-color dark:bg-dark-close-color dark:text-white"
+      class="bg-close-color dark:bg-dark-close-color dark:text-white px-4"
     >
       <template #content>
-        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
-          <div v-for="(image, index) in images" :key="index">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
+          <div v-for="(image, index) in images" :key="index" class="hover:scale-105">
             <img
               class="w-full h-auto cursor-pointer"
               :src="image"

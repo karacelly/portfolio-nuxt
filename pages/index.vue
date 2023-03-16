@@ -3,7 +3,7 @@
   <div class="w-8 border-b-2 border-secondary-color" />
 
   <div class="content">
-    <p class="text-md pt-4">
+    <p class="text-md pt-4 text-justify">
       As a junior studying Computer Science at Binus University, I am driven by
       a passion for software engineering, especially web and mobile development.
       I am constantly looking for new challenges to tackle and opportunities to

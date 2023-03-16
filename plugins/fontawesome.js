@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import {
   faGraduationCap,
   faBriefcase,
+  faCode,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faSun,
@@ -27,6 +28,7 @@ library.add(
   faFileLines,
   faGraduationCap,
   faBriefcase,
+  faCode,
   faGithub,
   faLinkedin,
   faInstagram
