@@ -13,6 +13,8 @@
     "@nuxt/typescript-build": "^2.1.0",
     "@nuxtjs/color-mode": "^3.2.0",
     "@nuxtjs/tailwindcss": "^6.4.1",
+    "@types/markdown-it": "^12.2.3",
+    "@types/node": "^18.15.5",
     "@types/three": "^0.149.0",
     "nuxt": "^3.2.3"
   },
@@ -23,6 +25,8 @@
     "@fortawesome/vue-fontawesome": "^3.0.3",
     "@nuxtjs/axios": "^5.13.6",
     "@tailwindcss/line-clamp": "^0.4.2",
+    "@tailwindcss/typography": "^0.5.9",
+    "markdown-it": "^13.0.1",
     "octokit": "^2.0.14",
     "primeicons": "^6.0.1",
     "primevue": "^3.24.0"

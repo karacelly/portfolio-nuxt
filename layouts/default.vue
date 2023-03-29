@@ -10,9 +10,7 @@ useHead({
   <main
     class="flex flex-col md:flex-row lg:flex-row justify-around w-full px-[5vw] pt-[5vw] pb-[20vw] md:py-[5vh] lg:py-[5vh] text-black dark:text-white gap-y-5 md:gap-x-5 lg:gap-x-5 items-center"
   >
-    <ProfileItem
-      class="w-full md:w-1/3 lg:w-1/4 md:h-[90vh] lg:h-[90vh]"
-    ></ProfileItem>
+    <Sidebar class="w-full md:w-1/3 lg:w-1/4 md:h-[90vh] lg:h-[90vh]"></Sidebar>
     <div
       class="w-full md:h-[90vh] lg:h-[90vh] md:max-w-[70vw] lg:max-w-[70vw] relative bg-backdrop-color dark:bg-dark-backdrop-color rounded-xl text-black dark:text-white drop-shadow-lg md:overflow-scroll lg:overflow-scroll"
     >
