@@ -66,13 +66,23 @@ export default defineComponent({
   },
 
   setup(props) {
-    const { pending, data: readme } = useLazyAsyncData("readme", () =>
-      $fetch(
-        "https://raw.githubusercontent.com/karacelly/" +
-          props.name +
-          "/main/README.md"
-      )
-    );
+    const { pending, data: readme } = useLazyAsyncData("readme", async () => {
+      let response;
+      try {
+        response = await $fetch(
+          `https://raw.githubusercontent.com/karacelly/${props.name}/main/README.md`
+        );
+      } catch (error) {
+        if (error.status === 404) {
+          response = await $fetch(
+            `https://raw.githubusercontent.com/karacelly/${props.name}/master/README.md`
+          );
+        } else {
+          throw error;
+        }
+      }
+      return response;
+    });
 
     const md = new MarkdownIt();
     const renderedReadme = ref("");
@@ -91,6 +101,10 @@ export default defineComponent({
 </script>
 
 <style>
+.prose {
+  max-width: 100%;
+}
+
 .dark .prose h1,
 .dark .prose h2,
 .dark .prose h3,
@@ -117,12 +131,26 @@ export default defineComponent({
 }
 
 .prose p,
-.prose h4 {
+.prose h4,
+.prose ol li,
+.prose ul li {
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
 
 .prose a {
   color: var(--vt-c-red);
+}
+
+.prose img {
+  min-width: 30%;
+  max-height: 80vh;
+  display: inline;
+  margin: 5px 10px;
+}
+
+.prose p a img {
+  min-width: 0%;
+  max-height: 0%;
 }
 </style>

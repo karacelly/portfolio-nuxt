@@ -10,7 +10,7 @@ definePageMeta({
 const STORAGE_KEY = "repos";
 const cachedData = localStorage.getItem(STORAGE_KEY);
 
-const initialData = () => {
+const initialData = (): Repository | null => {
   if (cachedData) {
     JSON.parse(cachedData).forEach((element: Repository) => {
       if (element?.id == route.params.id) {
@@ -18,14 +18,18 @@ const initialData = () => {
       }
     });
   }
+  return null;
 };
 
-const { pending, data } = useLazyAsyncData("data", () =>
+const data = ref(initialData());
+
+const { pending, data: repo } = useLazyAsyncData("data", () =>
   initialData == null
-    ? Promise.resolve(initialData)
+    ? (data.value = initialData)
     : $fetch("https://api.github.com/repositories/" + route.params.id).then(
-        (repo: Repository) => {
-          return repo;
+        (r: Repository) => {
+          data.value = r;
+          return r;
         }
       )
 );
