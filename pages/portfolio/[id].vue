@@ -29,6 +29,8 @@ const { pending, data } = useLazyAsyncData("data", () =>
         }
       )
 );
+
+console.log(data);
 </script>
 
 <template>
@@ -42,6 +44,8 @@ const { pending, data } = useLazyAsyncData("data", () =>
       :name="data.name"
       :description="data.description"
       :created_at="data.created_at"
+      :github="data.html_url"
+      :website="data.homepage"
     />
   </div>
 </template>

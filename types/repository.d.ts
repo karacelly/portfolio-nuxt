@@ -4,4 +4,6 @@ interface Repository {
   description: string;
   topics: string[];
   created_at: string;
+  html_url: string;
+  homepage: string;
 }

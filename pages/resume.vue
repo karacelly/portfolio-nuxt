@@ -3,12 +3,7 @@
   <div class="w-8 border-b-2 border-secondary-color" />
 
   <div class="my-6">
-    <button
-      @click="downloadPDF()"
-      class="py-2 px-4 border-2 border-primary-color hover:bg-gradient-to-r from-secondary-color to-primary-color rounded-md font-semibold text-black dark:text-white hover:outline-none hover:border-transparent"
-    >
-      Download My Resume >>
-    </button>
+    <PinkButton @click="downloadPDF()" text="Download My Resume >>" ></PinkButton>
   </div>
 
   <div class="title flex mt-6 gap-3 items-center">
