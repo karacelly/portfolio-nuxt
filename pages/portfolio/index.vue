@@ -45,7 +45,13 @@ const { pending, data } = useLazyAsyncData("data", () =>
     <div class="w-8 border-b-2 border-secondary-color" />
 
     <div
-      v-if="!pending && data && data.length"
+      v-if="pending && !data"
+      class="mt-6 mb-2 flex md:grid md:grid-cols-3 md:gap-x-5 md:gap-y-4 md:mb-6"
+    >
+      <div v-for="i in 9" class="animate-blink h-[20vh] rounded-md"></div>
+    </div>
+    <div
+      v-else
       class="mt-6 mb-2 flex flex-col gap-y-3 md:grid md:grid-cols-3 md:gap-x-5 md:gap-y-4 md:mb-6"
     >
       <NuxtLink

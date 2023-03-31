@@ -45,6 +45,11 @@ import ServiceItem from "../components/ServiceItem.vue";
 </template>
 
 <script lang="ts">
+import designImage from "../assets/images/design.png";
+import developImage from "../assets/images/develop.png";
+import backendImage from "../assets/images/backend.png";
+import mobileImage from "../assets/images/mobile.png";
+
 export default {
   data() {
     return {
@@ -52,17 +57,22 @@ export default {
         {
           title: "Web Design",
           description: "Figma",
-          image: "~/assets/images/design.png",
+          image: designImage,
         },
         {
-          title: "Web Development",
-          description: "NextJS, NuxtJS, Laravel",
-          image: "~/assets/images/develop.png",
+          title: "Frontend Development",
+          description: "React, Vue",
+          image: developImage,
+        },
+        {
+          title: "Backend Development",
+          description: "Javascript, Typecript, Java, Golang",
+          image: backendImage,
         },
         {
           title: "Mobile App Development",
-          description: "Android Studio with Java",
-          image: "~/assets/images/mobile.png",
+          description: "Android Studio, Flutter",
+          image: mobileImage,
         },
       ],
     };

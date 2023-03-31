@@ -9,10 +9,8 @@ const props = defineProps({
     class="relative p-3 rounded-md box-shadow shadow-md bg-inner-color dark:bg-dark-inner-color flex items-center flex-col md:flex-row justify-center md:justify-start gap-x-4"
   >
     <div class="service-icon-box">
-      <!-- <img :src="service.image" alt="icon" class="w-40" /> -->
-      <img src="~/assets/images/design.png" alt="icon" class="w-20" />
+      <img :src="service.image" alt="icon" class="w-20" />
     </div>
-
     <div class="service-content-box">
       <h4 class="font-semibold text-md md:text-lg text-center md:text-justify">
         {{ service.title }}

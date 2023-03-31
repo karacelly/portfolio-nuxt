@@ -46,12 +46,16 @@ console.log(data);
 </script>
 
 <template>
-  <div>
+  <div v-if="pending && !data">
+    <div class="flex justify-center items-center h-[65vh] md:h-[70vh]">
+      <img src="../../assets/images/spinner.svg" alt="" />
+    </div>
+  </div>
+  <div v-else>
     <h1 class="text-xl md:text-3xl lg:text-3xl font-bold pb-2">Portfolio</h1>
     <div class="w-8 border-b-2 border-secondary-color" />
 
     <PortfolioItem
-      v-if="data"
       :id="data.id"
       :name="data.name"
       :description="data.description"
