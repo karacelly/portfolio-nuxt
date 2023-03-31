@@ -83,45 +83,6 @@
     </Timeline>
   </div>
 
-  <!-- <div class="title flex gap-3 items-center">
-    <div
-      class="icon py-2 px-3 rounded-md bg-close-color dark:bg-dark-close-color drop-shadow-md"
-    >
-      <font-awesome-icon
-        class="text-xl text-primary-color"
-        icon="fa-regular fa-file-lines"
-      />
-    </div>
-    <div class="section-title text-lg font-bold">Volunteer & Organization</div>
-  </div>
-  <div class="px-2">
-    <Timeline :value="volunteer" class="py-6">
-      <template #opposite="slotProps">
-          <p class="text-sm">
-            {{ slotProps.item.date }}
-          </p>
-          <p class="text-sm italic">
-            {{ slotProps.item.category }}
-          </p>
-      </template>
-      <template #content="slotProps">
-        <div class="pb-5 flex justify-between gap-x-3">
-          <div class="left w-[80%]">
-            <h2 class="text-lg font-bold">
-              {{ slotProps.item.position }}
-            </h2>
-            <h2 class="text-primary-color text-md">
-              {{ slotProps.item.company }}
-            </h2>
-            <p class="text-md">
-              {{ slotProps.item.desc }}
-            </p>
-          </div>
-        </div>
-      </template>
-    </Timeline>
-  </div> -->
-
   <div class="section-title text-lg font-bold">Certificates & Achievements</div>
   <div class="mt-4 mb-6">
     <Card
@@ -167,7 +128,6 @@
 
 <script>
 export default {
-  name: "App",
   data() {
     return {
       education: [
@@ -222,44 +182,6 @@ export default {
           date: "Feb 2021 - Aug 2021",
           desc: "Tutor and marker for Multimedia Programming Foundation (COMP7094), Database (ISYS6084).",
           category: "Part-time",
-        },
-      ],
-      volunteer: [
-        {
-          position: "Registration Officer",
-          company: "ICPC - International Collegiate Programming Contest",
-          date: "Oct 2021 - Nov 2021",
-          desc: "We manage all of the registration process of ICPC Asia Jakarta Regional 2021.",
-        },
-        {
-          position: "Support Staff",
-          company: "Computerun",
-          date: "Aug 2021 - Feb 2022",
-          desc: "Choosing and manage the consumption vendors and menu for the event. Recommends merchandise vendors for the event. Collaborate with other division to ace the event.",
-        },
-        {
-          position: "Freshmen Partner",
-          company: "Binus University",
-          date: "Jul 2021 - Aug 2022",
-          desc: "Supervise and help a group of freshmen to pass their first year of university.",
-        },
-        {
-          position: "Activist",
-          company: "HIMTI Binus University",
-          date: "Mar 2021 - Feb 2022",
-          desc: "Belongs to the Commission 2 – Relation Expansion, HIMTI Care Division. Hold an internal event every month to strengthen HIMTI members relationship. Responsible for internal study tour and social services.",
-        },
-        {
-          position: "Coordinator of PBC Alam Sutra",
-          company: "HIMTI BINUS University",
-          date: "Mar 2021 - Sep 2021",
-          desc: "Responsible for 3 divisions; Master of Ceremony (MC), Lectures, and Support. Decide and make sure of the schedule, delivery method, and place of the event are enough to provide all of School of Computer Science students. Prepare the material used for the C Programming lectures. Invite of total 17 laboratory assistants to teach the participants.",
-        },
-        {
-          position: "Proctor",
-          company: "ICPC - International Collegiate Programming Contest",
-          date: "Nov 2020 - Dec 2020",
-          desc: "Proctor is the comittee that helps to monitor each ICPC Asia Jakarta Regional 2020 team during the competition.",
         },
       ],
       images: [

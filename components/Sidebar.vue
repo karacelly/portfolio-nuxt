@@ -84,7 +84,10 @@
               </div>
               <div class="detail w-3/4 flex flex-col">
                 <span class="text-gray-400 text-xs">Email</span>
-                <a href="mailto:aracellykesya@gmail.com" class="truncate"
+                <a
+                  target="_blank"
+                  href="mailto:aracellykesya@gmail.com"
+                  class="truncate"
                   >aracellykesya@gmail.com</a
                 >
               </div>
@@ -121,13 +124,13 @@
           <div
             class="w-full flex mt-6 md:mb-2 lg:mb-2 px-5 justify-around items-center"
           >
-            <a href="https://github.com/karacelly"
+            <a target="_blank" href="https://github.com/karacelly"
               ><font-awesome-icon class="text-xl" icon="fa-brands fa-github"
             /></a>
-            <a href="https://www.instagram.com/kesyaawijaya/"
+            <a target="_blank" href="https://www.instagram.com/kesyaawijaya/"
               ><font-awesome-icon class="text-xl" icon="fa-brands fa-instagram"
             /></a>
-            <a href="https://www.linkedin.com/in/kesyawijaya/"
+            <a target="_blank" href="https://www.linkedin.com/in/kesyawijaya/"
               ><font-awesome-icon class="text-xl" icon="fa-brands fa-linkedin"
             /></a>
           </div>

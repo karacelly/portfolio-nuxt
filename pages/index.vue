@@ -1,8 +1,12 @@
+<script setup lang="ts">
+import ServiceItem from "../components/ServiceItem.vue";
+</script>
+
 <template>
   <h1 class="text-xl md:text-3xl lg:text-3xl font-bold pb-2">About Me</h1>
   <div class="w-8 border-b-2 border-secondary-color" />
 
-  <div class="content">
+  <section class="content">
     <p class="text-md pt-4 text-justify">
       As a junior studying Computer Science at Binus University, I am driven by
       a passion for software engineering, especially web and mobile development.
@@ -25,5 +29,43 @@
       make me a valuable asset to any team looking for a dedicated and versatile
       software engineer.
     </p>
-  </div>
+  </section>
+
+  <section class="deed my-3">
+    <div class="section-title text-xl font-bold">What I'm Doing</div>
+
+    <div class="mt-4 grid grid-cols-2 gap-4">
+      <ServiceItem
+        class="list-none"
+        v-for="service in services"
+        :service="service"
+      ></ServiceItem>
+    </div>
+  </section>
 </template>
+
+<script lang="ts">
+export default {
+  data() {
+    return {
+      services: [
+        {
+          title: "Web Design",
+          description: "Figma",
+          image: "~/assets/images/design.png",
+        },
+        {
+          title: "Web Development",
+          description: "NextJS, NuxtJS, Laravel",
+          image: "~/assets/images/develop.png",
+        },
+        {
+          title: "Mobile App Development",
+          description: "Android Studio with Java",
+          image: "~/assets/images/mobile.png",
+        },
+      ],
+    };
+  },
+};
+</script>
