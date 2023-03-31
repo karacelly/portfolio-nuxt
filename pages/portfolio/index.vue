@@ -46,9 +46,12 @@ const { pending, data } = useLazyAsyncData("data", () =>
 
     <div
       v-if="pending && !data"
-      class="mt-6 mb-2 flex md:grid md:grid-cols-3 md:gap-x-5 md:gap-y-4 md:mb-6"
+      class="mt-6 mb-2 flex-col gap-y-5 md:grid md:grid-cols-3 md:gap-x-5 md:gap-y-4 md:mb-6"
     >
-      <div v-for="i in 9" class="animate-blink h-[20vh] rounded-md"></div>
+      <div
+        v-for="i in 9"
+        class="animate-blink h-[20vh] rounded-md mt-2 md:mt-0"
+      ></div>
     </div>
     <div
       v-else
