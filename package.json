@@ -12,6 +12,7 @@
     "@nuxt/types": "^2.16.0",
     "@nuxt/typescript-build": "^2.1.0",
     "@nuxtjs/color-mode": "^3.2.0",
+    "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/tailwindcss": "^6.4.1",
     "@types/markdown-it": "^12.2.3",
     "@types/node": "^18.15.5",

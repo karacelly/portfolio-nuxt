@@ -35,7 +35,7 @@
 
 <script lang="ts">
 import MarkdownIt from "markdown-it";
-import { ref } from "vue";
+import { defineComponent, ref, watch } from "vue";
 
 export default defineComponent({
   props: {

@@ -1,11 +1,16 @@
 <script setup lang="ts">
 const STORAGE_KEY = "repos";
+const CACHE_EXPIRATION_TIME = 60 * 60 * 1000; // 1 hour in milliseconds
 
 const cachedData = localStorage.getItem(STORAGE_KEY);
 const initialData = cachedData ? JSON.parse(cachedData) : null;
+const cachedTimestamp = localStorage.getItem(`${STORAGE_KEY}-timestamp`);
+const isCacheValid =
+  cachedTimestamp &&
+  Date.now() - parseInt(cachedTimestamp, 10) < CACHE_EXPIRATION_TIME;
 
 const { pending, data } = useLazyAsyncData("data", () =>
-  initialData
+  isCacheValid && initialData
     ? Promise.resolve(initialData)
     : $fetch("https://api.github.com/users/karacelly/repos").then(
         (repos: Repository[]) => {
@@ -24,6 +29,10 @@ const { pending, data } = useLazyAsyncData("data", () =>
             );
           });
           localStorage.setItem(STORAGE_KEY, JSON.stringify(sortedRepos));
+          localStorage.setItem(
+            `${STORAGE_KEY}-timestamp`,
+            Date.now().toString()
+          );
           return sortedRepos;
         }
       )
