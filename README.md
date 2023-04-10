@@ -1,6 +1,7 @@
-# Nuxt 3 Minimal Starter
+## My Portfolio
+This project is a personal portfolio website that I created using Nuxt3 and TypeScript. The website connects to the GitHub API to fetch my repositories and display them on the website. The website is styled using Tailwind, a utility-first CSS framework. Overall, the project showcases my skills in web development, including my proficiency in Nuxt3, TypeScript, and API integration.
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Check out the hosted website [here](https://kesyawijaya.com/).
 
 ## Setup
 
@@ -40,3 +41,4 @@ npm run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
