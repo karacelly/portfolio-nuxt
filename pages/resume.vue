@@ -186,8 +186,9 @@ export default {
       ],
       images: [
         "/certificates/Devcamp.jpg",
-        "certificates/MentorEven2122.jpg",
-        "certificates/MentorOdd2122.jpg",
+        "/certificates/RevoU.jpg",
+        "/certificates/MentorEven2122.jpg",
+        "/certificates/MentorOdd2122.jpg",
       ],
       showModal: false,
       currentIndex: 0,
