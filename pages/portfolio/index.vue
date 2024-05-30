@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { ref } from "vue";
+import { repositories } from "~~/data/repositories";
+
 const STORAGE_KEY = "repos";
 const CACHE_EXPIRATION_TIME = 60 * 60 * 1000; // 1 hour in milliseconds
 
@@ -9,34 +12,34 @@ const isCacheValid =
   cachedTimestamp &&
   Date.now() - parseInt(cachedTimestamp, 10) < CACHE_EXPIRATION_TIME;
 
-const { pending, data } = useLazyAsyncData("data", () =>
-  isCacheValid && initialData
-    ? Promise.resolve(initialData)
-    : $fetch("https://api.github.com/users/karacelly/repos").then(
-        (repos: Repository[]) => {
-          const filteredRepos = repos.filter((repo) => {
-            return (
-              repo.topics?.length > 0 &&
-              (repo.topics.includes("website") ||
-                repo.topics.includes("mobile") ||
-                repo.topics.includes("game"))
-            );
-          });
-          const sortedRepos = filteredRepos.sort((a, b) => {
-            return (
-              new Date(b.created_at).getTime() -
-              new Date(a.created_at).getTime()
-            );
-          });
-          localStorage.setItem(STORAGE_KEY, JSON.stringify(sortedRepos));
-          localStorage.setItem(
-            `${STORAGE_KEY}-timestamp`,
-            Date.now().toString()
+const fetchData = () => {
+  if (isCacheValid && initialData) {
+    return Promise.resolve(initialData);
+  } else {
+    return $fetch("https://api.github.com/users/karacelly/repos").then(
+      (repos: Repository[]) => {
+        const filteredRepos = repos.filter((repo) => {
+          return (
+            repo.topics?.length > 0 &&
+            (repo.topics.includes("website") ||
+              repo.topics.includes("mobile") ||
+              repo.topics.includes("game"))
           );
-          return sortedRepos;
-        }
-      )
-);
+        });
+        const sortedRepos = filteredRepos.sort((a, b) => {
+          return (
+            new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+          );
+        });
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(sortedRepos));
+        localStorage.setItem(`${STORAGE_KEY}-timestamp`, Date.now().toString());
+        return sortedRepos;
+      }
+    );
+  }
+};
+
+const { pending, data } = useLazyAsyncData("data", fetchData);
 </script>
 
 <template>
@@ -44,6 +47,43 @@ const { pending, data } = useLazyAsyncData("data", () =>
     <h1 class="text-xl md:text-3xl lg:text-3xl font-bold pb-2">Portfolio</h1>
     <div class="w-8 border-b-2 border-secondary-color" />
 
+    <h1 class="mt-5 text-lg md:text-xl lg:text-xl font-medium pb-2">
+      Recent Work
+    </h1>
+    <div class="w-8 border-b-2 border-primary-color" />
+    <div
+      class="mt-6 mb-2 flex flex-col gap-y-3 md:grid md:grid-cols-3 md:gap-x-5 md:gap-y-4 md:mb-6"
+    >
+      <NuxtLink
+        v-for="repository in repositories"
+        :key="repository.id"
+        :to="`/portfolio/${repository.id}`"
+        class="flex flex-col justify-center items-center p-6 bg-close-color border rounded-lg shadow animate-pulse md:animate-none md:border-gray-100 dark:bg-dark-close-color md:dark:border-gray-700 drop-shadow-lg md:hover:animate-pulse md:hover:scale-105"
+      >
+        <div>
+          <h5
+            class="mb-2 text-lg font-semibold tracking-tight text-gray-900 dark:text-white text-center md:text-xl"
+          >
+            {{
+              repository.name
+                .split("-")
+                .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+                .join(" ")
+            }}
+          </h5>
+          <p
+            class="font-normal text-xs text-center text-gray-700 dark:text-gray-400 md:text-sm line-clamp-3"
+          >
+            {{ repository.description }}
+          </p>
+        </div>
+      </NuxtLink>
+    </div>
+
+    <h1 class="mt-5 text-lg md:text-xl lg:text-xl font-medium pb-2">
+      Private Project
+    </h1>
+    <div class="w-8 border-b-2 border-primary-color" />
     <div
       v-if="pending && !data"
       class="mt-6 mb-2 flex-col gap-y-5 md:grid md:grid-cols-3 md:gap-x-5 md:gap-y-4 md:mb-6"

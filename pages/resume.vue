@@ -134,8 +134,8 @@ export default {
         {
           title: "S.Kom - Sarjana Komputer",
           instance: "Binus University",
-          date: "2020 - 2024 (expected)",
-          desc: "Current GPA: 3.89",
+          date: "2020 - 2024",
+          desc: "Current GPA: 3.93",
         },
         {
           title: "High School",
@@ -147,7 +147,7 @@ export default {
         {
           position: "Application Developer",
           company: "Binus University",
-          date: "Feb 2023 - Present",
+          date: "Feb 2023 - Feb 2024",
           category: "Internship",
         },
         {
@@ -159,14 +159,14 @@ export default {
         {
           position: "Operations and System Development Staff",
           company: "Binus University",
-          date: "Aug 2022 - Present",
+          date: "Aug 2022 - Feb 2024",
           desc: "Providing technical support in network, system and infrastructure for activities that were held in or by Software Laboratory. Installation and maintenance of servers and workstations. Hardware upgrade for servers and workstations.",
           category: "Full-time",
         },
         {
           position: "Laboratory Assistant",
           company: "Binus University",
-          date: "Sept 2021 - Present",
+          date: "Sept 2021 - Feb 2024",
           desc: "Tutor and marker for  Operating System (COMP6153001), Object Oriented Analysis & Design (COMP6115001), Framework Layer Architecture (COMP6122001), Data Structures (COMP6048001), Human & Computer Interaction (COMP6800001), Computer Vision (COMP7116001), and Scientifc Computing (MATH6183001).",
           category: "Full-time",
         },
